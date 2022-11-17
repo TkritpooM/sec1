@@ -1,0 +1,39 @@
+import javax.swing.*;
+import java.text.*;
+
+public class Test44 {
+
+	static final double TAX_RATE = 0.0625;
+	
+	public static void main(String[] args) {
+		
+		NumberFormat f1 = NumberFormat.getCurrencyInstance();
+		DecimalFormat frm = new DecimalFormat("##.#####");
+		DecimalFormat frmm = new DecimalFormat("##.#");
+		
+		String aaggb = frm.format(TAX_RATE*100);
+		
+		String cdid = JOptionPane.showInputDialog("This program calculates the total cost of a CD order"
+				+ "\nPlease enter the ID of the CD");
+		
+		String cdTitle = JOptionPane.showInputDialog("Please enter the title of the CD");
+		
+		String cdPrice = JOptionPane.showInputDialog("Please enter the price of the CD in U.S. dollars");
+		double cdprice = Double.parseDouble(cdPrice);
+		
+		String cdQuantity = JOptionPane.showInputDialog("Please enter the quantity to be pruchased");
+		int cdquantity = Integer.parseInt(cdQuantity);
+		
+		JOptionPane.showMessageDialog(null, "Summary of the transaction:" + "\n\n" +
+		"CD ID: " + cdid + 
+		"\nCD Title: " + cdTitle +
+		"\nCD Unit Price: " + f1.format(cdprice) +
+		"\nCD Quantity: " + cdquantity + "\n\n" +
+		"Subtotal: " + "$" + frmm.format(cdprice * cdquantity)  + 
+		"\nTax rate: " + (aaggb) + "%" +
+		"\nTotal: " + "$" + frm.format((cdprice * cdquantity)*(1 + TAX_RATE)) + "\n\n" + 
+		"End of Program" );
+
+	}
+
+}
