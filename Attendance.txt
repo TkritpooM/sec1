@@ -1,4 +1,4 @@
 Student ID : 2213111186
 full name : Kithiphum Thitanhopat
 Aka : poom
-ClassDetail : Encapsulation
+ClassDetail : Class and Composition
